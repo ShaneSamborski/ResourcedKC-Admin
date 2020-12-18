@@ -35,14 +35,14 @@
             </div>
           </div>
           <div class="col-md">
-            <h2 class="title">Add your Organaztion to the <strong>ResourcedKC</strong> list!</h2>
+            <h2 class="title">Add your Organaiztion to the <strong>ResourcedKC</strong> list!</h2>
             <a class="home" href="index.html"
               ><i class="fas fa-home"></i></a>
             <div class="createResource">
 
               <br />
               <br />
-              <label for="orgName">Organaztion Name: </label>
+              <label for="orgName">Organaiztion Name: </label>
               <input id="orgName" type="text" maxlength="100" onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)" autocomplete="off" />
               <br />
               <br />
@@ -51,7 +51,7 @@
               <br />
               <br />
               <label for="number">Phone Number: </label>
-              <input id="number" type="text" maxlength="11"  autocomplete="off" /> <!--regex add here for only 0-9 input-->
+              <input id="number" type="text" maxlength="11"  autocomplete="off" pattern="[0-9\/]*" /> <!--regex add here for only 0-9 input-->
               <br />
               <br />
               <label for="email">Email: </label>
@@ -65,6 +65,7 @@
               <button class="button" type="submit" onclick="submitResource()"><strong>Submit</strong></button>
            
             </div>
+        </div>
         </div>
       </section>
 
