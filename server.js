@@ -69,3 +69,10 @@ adminApp.post("/resources", (request, res) => {
       return created;
     });
   });
+
+  adminApp.get('/account', function(request, response){
+    Admin.find(function(err, items){
+            if (err) return console.error(err);
+            response.send(items); 
+    });    
+});

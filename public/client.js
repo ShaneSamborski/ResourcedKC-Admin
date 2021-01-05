@@ -47,3 +47,19 @@ async function submitResource() {
     
     return creation;
   }
+
+  async function getAccount(){
+    let requestOptions = {
+        method: "GET",
+        headers : { "Content-Type": "application/json"} 
+    }
+
+    const response = await fetch("/account", requestOptions); 
+    const body = await response.json(); 
+    if(response.status != 200){
+        throw Error("Error!"); 
+    }
+
+    return body; 
+
+}
