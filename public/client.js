@@ -17,9 +17,33 @@ async function submitResource() {
     window.location.href = 'index.html';
     const response = await fetch("/resources", requestOptions);
     
-    if (response.status != 200) {
+    if (res.status != 200) {
       throw Error("Error!");
     }
     
     return node;
+  }
+
+
+  async function createAcct() {
+    let creation = {
+      emailAddress : document.getElementById('emailCreate').value,
+      username : document.getElementById('usernameCreate').value,
+      password : document.getElementById('passwordCreate').value
+    };
+  
+    let requestOptions = {
+      method: "POST",
+      body: JSON.stringify(creation),
+      headers: { "Content-Type": "application/json" },
+    };
+    alert("Your account has been created!");
+    window.location.href = 'index.html';
+    const response = await fetch("/creation", requestOptions);
+    
+    if (response.status != 200) {
+      throw Error("Error!");
+    }
+    
+    return creation;
   }
