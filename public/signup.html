@@ -39,16 +39,16 @@
             <a class="home" href="index.html"
               ><i class="fas fa-home"></i></a>
             <div class="login">
-              <label for="email">Email: </label>
-              <input id="email" type="text" maxlength="150"  autocomplete="off" />
+              <label for="emailCreate">Email: </label>
+              <input id="emailCreate" type="text" maxlength="150"  autocomplete="off" />
               <br />
               <br />
-              <label for="username">Username: </label>
-              <input id="username" type="text" maxlength="100" onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)" autocomplete="off" />
+              <label for="usernameCreate">Username: </label>
+              <input id="usernameCreate" type="text" maxlength="100" onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)" autocomplete="off" />
               <br />
               <br />
-              <label for="password">Password: </label>
-              <input id="password" class="pass" type="password" maxlength="100" minlength="8"  autocomplete="off" />
+              <label for="passwordCreate">Password (8 characters minimum): </label>
+              <input id="passwordCreate" class="pass" type="password" minlength="8"  required />
               <br />
               <br />
               <input type="checkbox" onclick="showPass()">Show Password
@@ -58,7 +58,7 @@
 
               
              
-              <a href="index.html" class="submit" onclick="createAcct()">Create Account<i class="fas fa-user-plus"></i></a>
+              <a href="#" class="submit" onclick="createAcct()">Create Account<i class="fas fa-user-plus"></i></a>
               <!--Once clicked redirect to index.html-->
            
             </div>
@@ -94,11 +94,11 @@
     ></script>
     <script>
         function showPass() {
-  var x = document.getElementById("password");
-  if (x.type === "password") {
+  var x = document.getElementById("passwordCreate");
+  if (x.type === "passwordCreate") {
     x.type = "text";
   } else {
-    x.type = "password";
+    x.type = "passwordCreate";
   }
 }
     </script>

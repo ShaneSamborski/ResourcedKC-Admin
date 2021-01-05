@@ -6,7 +6,7 @@ mongoose.set("useFindAndModify", false);
 const bodyParser = require("body-parser");
 let port = process.env.PORT || 3050;
 const mongoDB =
-  "mongodb+srv://WebDevAdmin:124512AXEL@mycluster.0lxio.mongodb.net/adminApp?retryWrites=true&w=majority";
+  "mongodb+srv://dbAdmin:SKCstudent@cluster0.ewhdg.mongodb.net/ResourcedKC?retryWrites=true&w=majority";
 var Admin = require("./assests/JS/models/adminSchema.js");
 var Resource = require("./assests/JS/models/resourceSchema");
 
@@ -56,5 +56,16 @@ adminApp.post("/resources", (request, res) => {
         return console.error(error);
       }
       return node;
+    });
+  });
+
+  adminApp.post("/creation/:id", (req, response) => {
+    let created = new Admin(req.body);
+    created.save(function (error, created){
+      if(error){
+        response.sendStatus(500);
+        return console.error(error);
+      }
+      return created;
     });
   });
